@@ -1,0 +1,35 @@
+//variables
+//fonts
+$font: 'Gilroy', Arial, sans-serif;
+
+//colors
+$text: #4D4D4D;
+$bg: #ffffff;
+
+//another
+$font-size: 16px;
+
+//layout
+/*-----------------SECTION-MIXINS--------------------*/
+@import "layout/mixins";
+/*------------------------SECTION-FONTS----------------*/
+@import "layout/fonts";
+/*------------------------SECTION-SMART-GRID----------------*/
+@import "layout/smart-grid";
+/*------------------------SECTION-ADJUSTMENT----------------*/
+@import "layout/adjustment";
+/*------------------------SECTION-COMMON----------------*/
+@import "layout/common";
+
+//sections
+/*------------------------SECTION-HEADER----------------*/
+@import "sections/header";
+/*------------------------SECTION-FOOTER---------------------*/
+@import "sections/footer";
+
+
+.debug {
+  //@include debug(rgba(0,0,0,0.3), 1px solid red);
+  //z-index: 100;
+  //top: 0;
+}
