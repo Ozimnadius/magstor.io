@@ -1,0 +1,128 @@
+.menu{
+  position: fixed;
+  left: 320px;
+  top: 0;
+  height: 100vh;
+  width: calc(100% - 320px);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+
+  &_g{
+    background-color: #f3f3f3;
+    .menu__header{
+      background-color: #f3f3f3;
+    }
+  }
+
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    right: 100%;
+    height: 100%;
+    top: 0;
+    width: 50px;
+  }
+
+  &__header{
+    margin-left: 0;
+    padding: 40px 0;
+  }
+
+  &__cols{
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 40px 0;
+
+    .container{
+      height: 100%;
+    }
+
+  }
+
+  &__row{
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+    &::-webkit-scrollbar {
+      width: 6px;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 100px;
+      background-color: rgba(#000000,.1);
+    }
+
+  }
+
+  &__col{
+    @include col;
+    @include size(6);
+    @include size-xlg(8);
+  }
+
+  &__item{
+    margin-bottom: 25px;
+  }
+}
+
+.mitem{
+
+  &__top{
+    margin-bottom: 8px;
+  }
+
+  &__link{
+    display: flex;
+    align-items: center;
+    color: #000000;
+    @include tr;
+
+    &:hover{
+      color: #325afe;
+    }
+  }
+
+  &__img{
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    margin-right: 20px;
+  }
+
+  &__title{
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  &__list{
+    padding-left: 70px;
+    margin-bottom: 15px;
+  }
+
+  &__item{
+    display: block;
+    padding: 8px 0;
+    color: rgba(#000000,.7);
+    @include tr;
+
+    &:hover{
+      color: rgba(#325afe,.7);
+    }
+  }
+
+  &__more{
+    color: #325afe;
+    font-weight: 500;
+    margin-left: 70px;
+  }
+
+}

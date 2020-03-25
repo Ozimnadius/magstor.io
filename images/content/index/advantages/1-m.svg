@@ -1,0 +1,14 @@
+<svg width="61" height="53" viewBox="0 0 61 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="60.4167" y="20.7629" width="31.7685" height="60.1574" rx="2" transform="rotate(90 60.4167 20.7629)" fill="#20203A"/>
+<path d="M9.09294 41.9963C8.72934 41.36 7.91123 41.0873 7.27493 41.0873C5.27512 41.0873 3.63892 42.7235 3.63892 44.7233V17.4532C3.63892 15.4533 5.27512 13.8171 7.27493 13.8171C7.91123 13.8171 8.82024 13.9989 9.09294 14.7261V41.9963Z" fill="#F2C94C" fill-opacity="0.2" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M22.7281 18.3622H11.8201" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M48.1803 18.3622H37.2722" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M56.3611 44.7233C56.3611 46.7231 54.7249 48.3593 52.7251 48.3593H7.27493C5.27512 48.3593 3.63892 46.7231 3.63892 44.7233" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M50.9072 41.9963C51.2708 41.36 52.0889 41.0873 52.7252 41.0873C54.725 41.0873 56.3612 42.7235 56.3612 44.7233V17.4532C56.3612 15.4533 54.725 13.8171 52.7252 13.8171C52.0889 13.8171 51.1799 13.9989 50.9072 14.7261V41.9963Z" fill="#403726" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M30.0001 2L28.1821 3.81801V7.45402L30.0001 9.27203L31.8181 7.45402V3.81801L30.0001 2Z" fill="#F2C94C" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M40.7263 42.9052L30.0001 14.7261L19.092 42.9052" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<circle cx="30" cy="15.3555" r="3.37963" fill="#F2C94C"/>
+<path d="M30 28.3611V36.5421" stroke="#F2C94C" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M30.0002 21.0891C33.0123 21.0891 35.4542 18.6472 35.4542 15.6351C35.4542 12.6229 33.0123 10.181 30.0002 10.181C26.988 10.181 24.5461 12.6229 24.5461 15.6351C24.5461 18.6472 26.988 21.0891 30.0002 21.0891Z" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M42.726 27.4521C39.5445 30.8155 34.9995 32.9062 30 32.9062C25.0005 32.9062 20.4554 30.8155 17.2739 27.4521" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+</svg>

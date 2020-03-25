@@ -2,7 +2,196 @@ extends ../main
 
 block variables
     - var title = 'Главная'
+    - var main = true
 
 block content
-    h1 Страничка "Главная"
-        +icon('001-twitter', 'svg')
+    .index
+        //- banner
+        section.index__banner
+            .ibanner
+                .container
+                    .ibanner__slider
+                        .swiper-container.ibanner__container
+                            .swiper-wrapper
+                                each i in [1,2,3]
+                                    .swiper-slide.ibanner__slide
+                                        .row
+                                            .ibanner__left
+                                                h2.ibanner__title
+                                                    | ТЕКСТИЛЬНЫЕ
+                                                    br
+                                                    b ЛАЙТБОКСЫ
+
+                                                .ibanner__sub
+                                                    | Изготовление текстильных световых
+                                                    | коробов и лайтбоксов на заказ
+
+                                                .ibanner__btns
+                                                    a(href='/').btn3.ibanner__more Подробнее
+                                                    a(href='/').btn2.ibanner__link Перейти в каталог
+                                            .ibanner__right
+                                                +image('images/content/index/banner/img.png','ibanner__img')
+
+                        .ibanner__nav
+                            button(type='button').ibanner__prev.ibanner__arr
+                                +icon('prev','ibanner__arr-svg')
+                            .ibanner__pag
+                            button(type='button').ibanner__next.ibanner__arr
+                                +icon('next','ibanner__arr-svg')
+        //- slider
+        section.index__slider
+            .swiper-container.islider
+                .swiper-wrapper
+                    each i in [1,2,3,4,1,2,3,4]
+                        .swiper-slide.islider__slide
+                            a(href='/').islide
+                                span.islide__img
+                                    +image('images/content/index/slider/' + i + '.jpg', 'islide__img-img')
+                                span.islide__content
+                                    span.islide__cat Наши работы
+                                    span.islide__title Печать для световых коробов
+        //- catalog
+        section.index__catalog
+            .icatalog
+                .container
+                    .icatalog__lines
+                        .icatalog__line
+                        .icatalog__line
+                        .icatalog__line
+                        .icatalog__line
+
+                    .icatalog__main
+                        +title('Каталог','Перейти в каталог','icatalog__title')
+                        .icatalog__list
+                            each i in [1,2,3,4,5,6,7]
+                                a(href='/').icitem
+                                    span.icitem__title Текстильные лайтбоксы
+                                    span.icitem__img
+                                        +image('images/content/catalog/' + i + '.jpg','icitem__img-img')
+                                        span.icitem__btn
+                                            +icon('arr-r','icitem__btn-svg')
+                            a(href='/').iclink
+                                span.iclink__title Не знаете, что выбрать?
+                                span.iclink__txt
+                                    | Оставьте заявку
+                                    | на обратный звонок
+                                span.iclink__txt
+                                    | И получите консультацию
+                                    | от специалистов
+                                span.iclink__btn
+                                    +icon('arr-r','iclink__btn-svg')
+        //- advantages
+        section.index__advantages
+            .iadvantages
+                .container
+                    +title('Наши преимущества','','iadvantages__title title_2')
+                    .iadvantages__list
+                        each i in [1,2,3,4,5]
+                            .iadvantages__item.iadvantage
+                                .iadvantage__img
+                                    picture
+                                        source(srcset='images/content/index/advantages/'+i+'.svg' type='image/jpeg' media='(min-width:767.9px)')
+                                        source(srcset='images/content/index/advantages/'+i+'-m.svg' type='image/jpeg' media='(min-width:319px)')
+                                        img(src='images/content/index/advantages/'+i+'.svg' alt='lorem1').iadvantage__img-img
+                                .iadvantage__txt Отработанная технология изготовления световых тканевых коробов
+                    button(type='button').iadvantages__btn.btn2 Перейти в каталог
+        //- pops
+        section.index__pops
+            .ipops
+                .container
+                    +title('Популярная продукция','Перейти в каталог','ipops__title')
+                    .ipops__list
+                        each i in ipops
+                            .ipops__item
+                                a(href='product.html').item
+                                    span.item__fake
+                                        span.item__main
+                                            span.item__top
+                                                span.item__img
+                                                    +image(i.src,'item__img-img')
+                                            span.item__bottom
+                                                span.item__title= i.title
+                                                span.item__price= i.price
+                                    span.item__hidden
+                                        span.item__main
+                                            span.item__top
+                                                span.item__img
+                                                    +image(i.src,'item__img-img')
+                                            span.item__bottom
+                                                span.item__title= i.title
+                                                span.item__price= i.price
+                                            span.item__btn
+                                                span.item__add Добавить в корзину
+        //- proj
+        section.index__proj
+            .iproj.icatalog
+                .container
+                    .icatalog__lines
+                        .icatalog__line
+                        .icatalog__line
+                        .icatalog__line
+                        .icatalog__line
+
+                    .icatalog__main
+                        +title('Выполненные проекты','Перейти в раздел','icatalog__title')
+                        .icatalog__list
+                            a(href='/').icbig
+                                span.icbig__img
+                                    +image('images/content/catalog/big.jpg','icbig__img-img')
+                                span.icbig__top
+                                    span.icbig__date 12.12.2019
+                                    span.icbig__proj Проекты
+                                span.icbig__title Анимационный тканевый лайтбокс для ТЕЛЕ2
+                                span.icitem__btn.icbig__btn
+                                    +icon('arr-r','icitem__btn-svg icbig__btn-svg')
+
+
+                            each i in [3,4,5,6,7]
+                                a(href='/').icitem.icitem_p
+                                    span.icitem__title
+                                        span.icitem__title-top
+                                            span.icitem__title-date 12.12.2019
+                                            span.icitem__title-proj Проекты
+                                        span.icitem__title-title Текстильные лайтбоксы
+                                    span.icitem__img
+                                        +image('images/content/catalog/' + i + '.jpg','icitem__img-img')
+                                        span.icitem__btn
+                                            +icon('arr-r','icitem__btn-svg')
+                            a(href='/').iclink
+                                span.iclink__title Не знаете, что выбрать?
+                                span.iclink__txt
+                                    | Оставьте заявку
+                                    | на обратный звонок
+                                span.iclink__txt
+                                    | И получите консультацию
+                                    | от специалистов
+                                span.iclink__btn.icbig__btn
+                                    +icon('arr-r','iclink__btn-svg')
+        //- about
+        section.index__about
+            .iabout.icatalog
+                .container
+                    .icatalog__lines
+                        .icatalog__line
+                        .icatalog__line
+                        .icatalog__line
+                        .icatalog__line
+                    .iabout__main.icatalog__main
+                        +title('О компании','','iabout__title')
+                        .iabout__row
+                            //- left
+                            .iabout__left
+                                .iabout__yt
+                                    iframe(src="https://www.youtube.com/embed/_sI_Ps7JSEk" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen).iabout__frame
+
+                            //- right
+                            .iabout__right
+                                .iabout__logo
+                                    +image('images/icons/logo-black.svg','iabout__logo-img')
+                                .iabout__content Компания MagStor предлагает услуги по изготовлению световых коробов для интерьерной рекламы и декора. В нашем ассортименте – текстильные лайтбоксы, тканевые постеры, панели Магнетик, фреймлайты и кристалайты. Каждый из этих типов имеет свои особенности и преимущества.
+                                .iabout__btns
+                                    a(href='/').iabout__link.btn3 Подробнее
+                                    a(href='/').iabout__link2.btn2.btn2_b Перейти в каталог
+
+
+

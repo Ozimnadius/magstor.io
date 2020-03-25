@@ -24,17 +24,170 @@ html(lang="ru")
     body
         .wrapper
             //- heeader
-            header.header
-                nav.nav
-                    each val in menu
-                        .nav__item= val
+            header(class=main ? 'header_absolute' : '').header
+                .container
+                    .header__left
+                        button(type='button').header__btn-aside.jsMenuOpen
+                            +icon('menu','')
+                        .header__logo
+                            if main
+                                +image('images/icons/logo.svg','header__logo-img')
+                            else
+                                +image('images/icons/logo-black.svg','header__logo-img')
+                    .header__nav
+                        .nav
+                            each i in nav
+                                a(href=i.href).nav__item= i.title
+                    .header__controls
+                        a(href='/').header__control
+                            +icon('basket', 'header__control-svg header__control-svg_basket')
+                            span.header__control-count 1
+                        a(href='/').header__control
+                            +icon('cabinet', 'header__control-svg header__control-svg_cabinet')
+                        a(href='/').header__control
+                            +icon('loop', 'header__control-svg header__control-svg_loop')
+                    .header__contacts
+                        a(href='tel:+7(495)369-53-75').header__tel +7 (495) 369-53-75
+                        button(type='button').btn.header__btn.jsCall заказать звонок
+
+
+            //- aside
+            aside.aside
+                .aside__top
+                    button(type='button').aside__close.jSMenuClose
+                        +icon('arrow-l','aside__close-svg')
+                    a(href='/').aside__logo
+                        +image('images/icons/logo.svg','aside__logo-img')
+
+                .aside__middle
+                    .aside__list
+                        .aside__item
+                            a(href='/').aside__link.aside__link_arr
+                                span.aside__link-txt ТЕКСТИЛЬНЫЕ ЛАЙТБОКСЫ
+                                +icon('arr-r', 'aside__link-svg')
+                            .aside__item-menu
+                                +menu('menu_g')
+                        .aside__item
+                            a(href='/').aside__link.aside__link_arr
+                                span.aside__link-txt ФРЕЙМЛАЙТЫ
+                                +icon('arr-r', 'aside__link-svg')
+                            .aside__item-menu
+                                +menu()
+                        .aside__item
+                            a(href='/').aside__link.aside__link_arr
+                                span.aside__link-txt ПАНЕЛИ МАГНЕТИК
+                                +icon('arr-r', 'aside__link-svg')
+                            .aside__item-menu
+                                +menu()
+                        .aside__item
+                            a(href='/').aside__link.aside__link_arr
+                                span.aside__link-txt КРИСТАЛАЙТЫ
+                                +icon('arr-r', 'aside__link-svg')
+                            .aside__item-menu
+                                +menu()
+                        .aside__item
+                            a(href='/').aside__link.aside__link_arr
+                                span.aside__link-txt ИЗДЕЛИЯ ИЗ КОЖИ
+                                +icon('arr-r', 'aside__link-svg')
+                            .aside__item-menu
+                                +menu()
+                        .aside__item
+                            a(href='/').aside__link.aside__link_arr
+                                span.aside__link-txt СУВЕНИРЫ
+                                +icon('arr-r', 'aside__link-svg')
+                            .aside__item-menu
+                                +menu()
+                        .aside__item
+                            a(href='/').aside__link.aside__link_arr
+                                span.aside__link-txt ПОДАРОЧНАЯ КОРОБКА
+                                +icon('arr-r', 'aside__link-svg')
+                            .aside__item-menu
+                                +menu()
+
+
+
+                    .aside__nav
+                        each i in nav
+                            a(href=i.href).aside__nitem= i.title
+
+                .aside__contacts
+                    a(href='https://yandex.ru/maps/-/CKqo7XM~').aside__contact Адрес: г. Москва, ул. Ярославская, д. 8, корп. 6
+                    a(href='tel:+7(495)369-53-75').aside__contact +7 (495) 369-53-75
+                    a(href='mailto:info@magstor.ru').aside__contact info@magstor.ru
 
             //- pages
-            .page
+            main.page
                 block content
 
             //- footer
             footer.footer
+                .container
+                    //-top
+                    .footer__top
+                        .row
+                            .footer__top-left
+                                a(href='/').footer__logo
+                                    +image('images/icons/logo.svg','footer__logo-img')
+
+                            .footer__top-center
+                                .footer__txt Оставьте заявку на обратный звонок и получите бесплатную консультацию от наших специалистов
+
+                            .footer__top-right
+                                button(type='button').btn.footer__btn.jsCall заказать звонок
+
+
+                    //- middle
+                    .footer__middle
+                        .row
+                            .footer__col
+                                .footer__list
+                                    a(href='/').footer__item.footer__item_w О нас
+                                    a(href='/').footer__item.footer__item_w Оплата и доставка
+                                    a(href='/').footer__item.footer__item_w наши проекты
+                                    a(href='/').footer__item.footer__item_w каталог
+                                    a(href='/').footer__item.footer__item_w Контакты
+                            .footer__col
+                                .footer__list
+                                    a(href='/').footer__item ТЕКСТИЛЬНЫЕ ЛАЙТБОКСЫ
+                                    a(href='/').footer__item ФРЕЙМЛАЙТЫ
+                                    a(href='/').footer__item ПАНЕЛИ МАГНЕТИК
+                                    a(href='/').footer__item КРИСТАЛАЙТЫ
+                            .footer__col
+                                .footer__list
+                                    a(href='/').footer__item ИЗДЕЛИЯ ИЗ КОЖИ
+                                    a(href='/').footer__item СУВЕНИРЫ
+                                    a(href='/').footer__item ПОДАРОЧНАЯ КОРОБКА
+                            .footer__col
+                                .footer__contacts
+                                    a(href='https://yandex.ru/maps/-/CKqo7XM~').footer__contact Адрес: г. Москва, ул. Ярославская, д. 8, корп. 6
+                                    a(href='tel:+7(495)369-53-75').footer__contact +7 (495) 369-53-75
+                                    a(href='mailto:info@magstor.ru').footer__contact info@magstor.ru
+                                .footer__socials
+                                    .socials
+                                        a(href='/').social
+                                            +icon('vk','social__svg')
+                                        a(href='/').social
+                                            +icon('fb','social__svg')
+                                        a(href='/').social
+                                            +icon('inst','social__svg')
+                                        a(href='/').social
+                                            +icon('fb','social__svg')
+
+
+
+                //- bottom
+                .footer__bottom
+                    .container
+                        .footer__copy © 2020 MagStor – производство интерьерной рекламы в Москве
+
+                        .footer__policy Политика конфиденциальности
+
+                        a(href='/').footer__vendor
+                            span.footer__vendor-txt Cоздание и продвижение сайтов
+                            +image('images/icons/vebdor.png', 'footer__vendor-img')
+
+
+
 
         .debug
             div
@@ -59,6 +212,128 @@ html(lang="ru")
                     div
                     div
                     div
+
+
+
+
+        //- fixed header
+        .header.header_fixed
+            .container
+                .header__left
+                    button(type='button').header__btn-aside.jsMenuOpen
+                        +icon('menu','')
+                    .header__logo
+                        +image('images/icons/logo-black.svg','header__logo-img')
+                .header__nav
+                    .nav
+                        each i in nav
+                            a(href=i.href).nav__item= i.title
+                .header__controls
+                    a(href='/').header__control
+                        +icon('basket', 'header__control-svg header__control-svg_basket')
+                        span.header__control-count 1
+                    a(href='/').header__control
+                        +icon('cabinet', 'header__control-svg header__control-svg_cabinet')
+                    a(href='/').header__control
+                        +icon('loop', 'header__control-svg header__control-svg_loop')
+                .header__contacts
+                    a(href='tel:+7(495)369-53-75').header__tel +7 (495) 369-53-75
+                    button(type='button').btn.header__btn.jsCall заказать звонок
+
+
+
+
+        //- mmenu
+        .mmenu
+            .mmenu__main
+                //- top
+                .mmenu__top
+                    //- left
+                    .mmenu__top-left
+                        button(type='button').mmenu__arrow.jsMenuClose
+                            +icon('arrow-l','mmenu__arrow-svg')
+                        a(href='/').mmenu__logo
+                            +image('images/icons/logo.svg','mmenu__logo-img')
+
+                    //- right
+                    .mmenu__top-right
+                        .mmenu__controls
+                            a(href='/').mmenu__control
+                                +icon('basket', 'mmenu__control-svg mmenu__control-svg_basket')
+                                span.mmenu__control-count 1
+                            a(href='/').mmenu__control
+                                +icon('cabinet', 'mmenu__control-svg mmenu__control-svg_cabinet')
+                            a(href='/').mmenu__control
+                                +icon('loop', 'mmenu__control-svg mmenu__control-svg_loop')
+
+
+                //- bottom
+                .mmenu__bottom
+                    .mmenu__btns
+                        a(href='tel:+7(495)369-53-75').mmenu__tel +7 (495) 369-53-75
+                        button(type='button').mmenu__btn.btn.jsCall заказать звонок
+                    .mmenu__list
+                        each i in [1,2,3,4,5,6,7]
+                            .mmenu__item
+                                a(href='/').mmenu__link.mmenu__link_arr
+                                    span.mmenu__link-txt ТЕКСТИЛЬНЫЕ ЛАЙТБОКСЫ
+                                    +icon('arr-r', 'mmenu__link-svg')
+                                .mmenu__wrapper
+                                    .mmenu__top
+                                        //- left
+                                        .mmenu__top-left
+                                            button(type='button').mmenu__arrow.jsWrapClose
+                                                +icon('arrow-l','mmenu__arrow-svg')
+                                                span.mmenu__arrow-txt НАЗАД
+
+                                        //- right
+                                        .mmenu__top-right
+                                            button(type='button').mmenu__close.jsMenuClose
+                                                +icon('close', 'mmenu__close-svg')
+
+                                    .mmenu__bottom
+                                        //- title
+                                        a(href='category.html').mmenu__title ИЗДЕЛИЯ ИЗ КОЖИ
+                                        //-list
+                                        .mmenu__list
+                                            each j in [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+                                                .mmenu__item
+                                                    a(href='/').mmenu__link.mmenu__link_arr
+                                                        span.mmenu__link-txt САКВОЯЖИ И ДОРОЖНЫЕ СУМКИ
+                                                        +icon('arr-r', 'mmenu__link-svg')
+                                                    .mmenu__wrapper
+                                                        .mmenu__top
+                                                            //- left
+                                                            .mmenu__top-left
+                                                                button(type='button').mmenu__arrow.jsWrapClose
+                                                                    +icon('arrow-l','mmenu__arrow-svg')
+                                                                    span.mmenu__arrow-txt НАЗАД
+
+                                                            //- right
+                                                            .mmenu__top-right
+                                                                button(type='button').mmenu__close.jsMenuClose
+                                                                    +icon('close', 'mmenu__close-svg')
+
+                                                        .mmenu__bottom
+                                                            a(href='category.html').mmenu__title ВИЗИТНИЦЫ
+                                                            .mmenu__list
+                                                                each k in [1,2,3,4,5,6,7,8,9,10]
+                                                                    .mmenu__item
+                                                                        a(href='/').mmenu__link
+                                                                            span.mmenu__link-txt Модель "Boston"
+
+
+
+                    .mmenu__nav
+                        each i in nav
+                            a(href=i.href).mmenu__nitem= i.title
+                    .mmenu__contacts
+                        a(href='https://yandex.ru/maps/-/CKqo7XM~').mmenu__contact Адрес: г. Москва, ул. Ярославская, д. 8, корп. 6
+                        a(href='tel:+7(495)369-53-75').mmenu__contact +7 (495) 369-53-75
+                        a(href='mailto:info@magstor.ru').mmenu__contact info@magstor.ru
+
+
+
 
 
 

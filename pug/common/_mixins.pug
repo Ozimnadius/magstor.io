@@ -1,14 +1,66 @@
 mixin icon(iconName, iconClass)
-  svg(class=`${iconClass}`)
-    use(xlink:href=`/images/icons/sprite.svg#${iconName}`)
+    svg(class=`${iconClass}`)
+        use(xlink:href=`/images/icons/sprite.svg#${iconName}`)
 
 mixin iconPath(iconPath,iconName, iconClass)
-  svg(class=`${iconClass}`)
-    use(xlink:href=`${iconPath}/sprite.svg#${iconName}`)
+    svg(class=`${iconClass}`)
+        use(xlink:href=`${iconPath}/sprite.svg#${iconName}`)
 
 mixin image(imagePath, imageClass, imageAlt)
-  if !imageAlt
-    - var alt = 'lorem'
-  else
-    - var alt = imageAlt
-  img(src=`${imagePath}`, alt=`${alt}`, class=`${imageClass}`)
+    if !imageAlt
+        - var alt = 'lorem'
+    else
+        - var alt = imageAlt
+    img(src=`${imagePath}`, alt=`${alt}`, class=`${imageClass}`)
+
+mixin title(title,link,cls)
+    div(class=cls).title
+        .title__txt= title
+        if link
+          a(href='.').title__link= link
+
+mixin menu(cls)
+    div(class=cls).menu
+        .header.menu__header
+            .container
+                .header__nav
+                    .nav
+                        a(href='/').nav__item О нас
+                        a(href='/').nav__item Оплата и доставка
+                        a(href='/').nav__item каталог
+                        a(href='/').nav__item наши проекты
+                        a(href='/').nav__item Контакты
+                .header__controls
+                    a(href='/').header__control
+                        +icon('basket', 'header__control-svg header__control-svg_basket')
+                        span.header__control-count 1
+                    a(href='/').header__control
+                        +icon('cabinet', 'header__control-svg header__control-svg_cabinet')
+                    a(href='/').header__control
+                        +icon('loop', 'header__control-svg header__control-svg_loop')
+                .header__contacts
+                    a(href='tel:+7(495)369-53-75').header__tel +7 (495) 369-53-75
+                    button(type='button').btn.header__btn.jsCall заказать звонок
+
+
+        .menu__cols
+            .container
+                .menu__row
+                    .row
+                        each i in [1,2,3,4,5,6,7,8,9,10,11,12]
+                            .menu__col
+                                .menu__item
+                                    .mitem
+                                        .mitem__top
+                                            a(href='category.html').mitem__link
+                                                span.mitem__img
+                                                    +image('images/content/catalog/img.jpg','mitem__img-img')
+                                                span.mitem__title Тиснение логотипа
+                                        .mitem__bottom
+                                            .mitem__list
+                                                a(href='product.html').mitem__item Модель "Highlander"
+                                                a(href='product.html').mitem__item Модель "Highlander"
+                                                a(href='product.html').mitem__item Модель "Highlander"
+                                                a(href='product.html').mitem__item Модель "Highlander"
+                                                a(href='product.html').mitem__item Модель "Highlander"
+                                            a(href='category.html').mitem__more Показать все

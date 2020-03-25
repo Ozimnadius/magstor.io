@@ -37,6 +37,10 @@ body {
 
 .page {
   flex-grow: 1;
+  margin-left: 320px;
+  @include xlg-block{
+    margin-left: 0;
+  }
 }
 
 .container {
@@ -58,6 +62,24 @@ a {
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
+}
+
+h1{
+  color: #13131d;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+h2{
+  color: #13131d;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+h3{
+  color: #13131d;
+  font-size: 25px;
+  font-weight: 600;
 }
 
 img {

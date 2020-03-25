@@ -1,0 +1,153 @@
+.aside{
+  position: fixed;
+  z-index: 1000;
+  width: 320px;
+  background-color: #13131d;
+  top: 0;
+  bottom: 0;
+  padding: 35px 45px 35px 30px;
+  box-shadow: 8px 4px 10px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background-color: rgba(#f2c94c,.5);
+  }
+
+  @include tr;
+  @include xlg-block{
+    left: -400px;
+  }
+  @include lg-block{
+    display: none;
+  }
+
+  &.active{
+    @include xlg-block{
+      left: 0;
+    }
+
+  }
+
+  &__top{
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+
+  &__close{
+    margin-right: 20px;
+    padding: 10px 0;
+    display: none;
+
+    @include xlg-block{
+      display: block;
+    }
+
+    &-svg{
+      width: 29px;
+      height: 16px;
+      fill: #ffffff;
+    }
+  }
+
+  &__logo{
+    display: block;
+
+  }
+
+  &__middle{
+    margin-bottom: 50px;
+  }
+
+  &__list{
+    margin-bottom: 25px;
+  }
+
+  &__item{
+
+    &:hover{
+
+      .aside__item-menu{
+        display: block;
+      }
+
+      .aside__link{
+        fill: #f2c94c;
+        color: #f2c94c;
+      }
+    }
+
+    &-menu{
+      display: none;
+    }
+
+  }
+
+  &__link{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 0;
+    fill: rgba(#ffffff,.5);
+    color: rgba(#ffffff,.5);
+    @include tr;
+
+    &-txt{
+      font-weight: 500;
+      max-width: 220px;
+    }
+
+    &-svg{
+      width: 5px;
+      height: 8px;
+      margin-left: 15px;
+    }
+  }
+
+  &__nav{
+    display: none;
+    @include xlg-block{
+      display: block;
+    }
+  }
+
+  &__nitem{
+    display: block;
+    padding: 11px 0;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    @include tr;
+    &:hover{
+      color: #f2c94c;
+    }
+  }
+
+  &__contacts{
+
+  }
+
+  &__contact{
+    display: block;
+    color: rgba(#ffffff,.5);
+    max-width: 220px;
+    padding: 12px 0;
+    line-height: lh(16,22.7);
+    @include tr;
+
+    &:hover{
+      color: rgba(#ffffff,1);
+    }
+  }
+}

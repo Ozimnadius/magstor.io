@@ -1,3 +1,281 @@
 .header {
+  margin-left: 320px;
+  background-color: #ffffff;
+  padding: 50px 0;
+  border-bottom: 1px solid rgba(#000, .1);
+  @include xlg-block {
+    margin-left: 0;
+  }
+  @include lg-block{
+    padding: 35px 0;
+  }
+  @include sm-block{
+    padding: 10px 0;
+  }
 
+  &_absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    @include sm-block{
+      position: static;
+      background: #13131d;
+    }
+
+    .header {
+
+      &__control {
+        &-svg {
+          stroke: #fff;
+        }
+      }
+
+      &__tel {
+        color: #ffffff;
+      }
+
+      &__btn {
+        &.btn {
+          border: 1px solid #fff;
+          color: #fff;
+          @include lg-block {
+            border: none;
+          }
+
+          &:hover {
+            color: $bg;
+            border-color: #325afe;
+          }
+        }
+      }
+
+      &__btn-aside {
+        svg {
+          fill: #fff;
+        }
+      }
+    }
+
+    .nav {
+      &__item {
+        color: #ffffff;
+      }
+    }
+  }
+
+  &_fixed {
+    position: fixed;
+    z-index: 100;
+    top: -300px;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    display: none;
+    @include tr;
+
+    @include xlg-block {
+      display: block;
+      padding: 15px 0;
+    }
+    @include lg-block{
+      padding: 10px 0;
+    }
+
+    &.active {
+      top: 0;
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__left {
+    display: none;
+    align-items: center;
+    @include xlg-block {
+      display: flex;
+    }
+  }
+
+  &__btn-aside {
+    margin-right: 30px;
+    @include sm-block{
+      margin-right: 15px;
+    }
+    svg {
+      width: 30px;
+      height: 19px;
+      fill: #000000;
+      @include sm-block{
+        width: 16px;
+        height: 11px;
+      }
+
+    }
+  }
+
+  &__logo{
+    @include sm-block{
+      width: 83px;
+    }
+  }
+
+  &__nav {
+    @include xlg-block {
+      display: none;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    align-items: baseline;
+    @include xlg-block {
+      margin-right: 30px;
+      margin-left: auto;
+    }
+    @include lg-block{
+      margin: 0 auto;
+    }
+    @include sm-block{
+      display: none;
+    }
+  }
+
+  &__control {
+    position: relative;
+    margin-right: 30px;
+
+    @include tr;
+
+    &:hover {
+      svg {
+        stroke: #325AFE;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &-svg {
+      fill: transparent;
+      stroke: #000000;
+      stroke-width: 2px;
+      @include tr;
+
+      &_basket {
+        width: 22px;
+        height: 21px;
+      }
+
+      &_cabinet {
+        width: 21px;
+        height: 21px;
+      }
+
+      &_loop {
+        width: 20px;
+        height: 22px;
+      }
+    }
+
+    &-count {
+      width: 18px;
+      height: 18px;
+      background-color: #f2c94c;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      color: #000000;
+      font-size: 12px;
+      font-weight: 500;
+
+      position: absolute;
+      top: -10px;
+      right: -15px;
+    }
+
+  }
+
+  &__contacts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    @include lg-block {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+
+  &__tel {
+    color: #000000;
+    font-size: 22px;
+    font-weight: 500;
+    margin-right: 25px;
+    @include tr;
+
+    @include lg-block {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    @include sm-block{
+      font-size: 14px;
+    }
+
+    &:hover {
+      color: #325AFE;
+    }
+
+  }
+
+  &__btn {
+    &.btn {
+      border: 1px solid #000000;
+      color: #000000;
+      @include lg-block {
+        border: none;
+        width: auto;
+        height: auto;
+      }
+      @include sm-block{
+        font-size: 10px;
+      }
+
+      &:hover {
+        color: $bg;
+        border-color: #325afe;
+      }
+    }
+  }
+
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    color: #000000;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-right: 25px;
+    @include tr;
+
+    &:hover {
+      color: #325AFE;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }
