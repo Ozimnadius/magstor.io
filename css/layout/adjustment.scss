@@ -11,6 +11,9 @@ html {
   height: 100%;
   font-size: $font-size;
   box-sizing: border-box;
+  @include sm-block{
+    font-size: 14px;
+  }
 ;
 }
 
@@ -68,18 +71,33 @@ h1{
   color: #13131d;
   font-size: 40px;
   font-weight: 600;
+  @include sm-block{
+    font-size: 24px;
+  }
 }
 
 h2{
   color: #13131d;
   font-size: 35px;
   font-weight: 600;
+  @include lg-block{
+    font-size: 34px;
+  }
+  @include sm-block{
+    font-size: 22px;
+  }
 }
 
 h3{
   color: #13131d;
   font-size: 25px;
   font-weight: 600;
+  @include lg-block{
+    font-size: 20px;
+  }
+  @include sm-block{
+    font-size: 18px;
+  }
 }
 
 img {

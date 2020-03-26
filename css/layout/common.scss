@@ -156,3 +156,47 @@
   }
 
 }
+
+.bread{
+
+  &__link {
+    padding: 0 15px;
+    border-right: 1px solid rgba(#000,.5);
+    line-height: 28px;
+    @include sm-block{
+      line-height: 14.26px;
+      padding: 0 10px;
+    }
+
+    &:first-child{
+      padding-left: 0;
+    }
+
+    &.active{
+      border-color: transparent;
+
+    }
+
+    &-svg{
+      width: 28px;
+      height: 28px;
+      fill: #f2c94c;
+      display: inline;
+      margin-bottom: -6px;
+      @include sm-block{
+        width: 18px;
+        height: 18px;
+        margin-bottom: -2px;
+      }
+    }
+
+    &-txt {
+      color: rgba(#000000,.5);
+      font-size: 16px;
+      font-weight: 400;
+      @include sm-block{
+        font-size: 12px;
+      }
+    }
+  }
+}

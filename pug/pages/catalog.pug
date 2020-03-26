@@ -1,0 +1,92 @@
+extends ../main
+
+block variables
+    - var title = 'Каталог'
+    - var main = false
+
+block content
+    .catalog
+        .catalog__top
+            .container
+                //- bread
+                .catalog__bread.bread
+                    a(href='/').bread__link
+                        +icon('home','bread__link-svg')
+                    span.bread__link.active
+                        span.bread__link-txt Каталог
+                //- title
+                h1.catalog__title Каталог
+
+                //- list
+                .catalog__list
+                    +catalogList()
+
+        //- content
+        .catalog__bottom
+            .container
+                .content
+                    p ЭТО SEO текст! Наша компания обладает современным оборудованием для тиснения логотипов на изделиях из натуральной и искусственной кожи, включая обложки ежедневников. Логотип золотого, серебряного или другого нужного цвета выдавливается в материале под воздействием температуры и давления. Вы можете разместить заказ на тиснение по коже фольгой или без нее позвонив по телефону +7 495 369-53-75
+                    h3 Наши преимущества:
+                    ol
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                            ol
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                    ul
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                            ul
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+
+                    h2 Цены на тиснение логотипа
+                    p Наша компания обладает современным оборудованием для тиснения логотипов на изделиях из натуральной и искусственной кожи, включая обложки ежедневников. Логотип золотого, серебряного или другого нужного цвета выдавливается в материале под воздействием температуры и давления. Вы можете разместить заказ на тиснение по коже фольгой или без нее позвонив по телефону +7 495 369-53-75
+                    h3 Цены на блинтовое тиснение:
+                    table
+                        tr
+                            td Блинтовое тиснение — до 50 см2 — Ежедневники из кожзаменителя:
+                            td Блинтовое тиснение — от 50 см2 — ежедневники из кожзаменителя:
+                        tr
+                            td
+                                | Тираж до 50 шт. - 1300/тираж
+                                br
+                                | Тираж до 100 шт. - 20.00 руб/шт.
+                                br
+                                | Тираж до 200-300 шт. - 19.00 руб/шт.
+                                br
+                                | Тираж до 500 шт. - 18.00 руб/шт.
+                                br
+                                | Тираж до 1000 шт. - 15.00 руб/шт.
+                                br
+                                | Тираж до 2000 шт. - 12.00 руб/шт.
+                            td
+                                | Тираж до 50 шт. - 1300/тираж
+                                br
+                                | Тираж до 100 шт. - 20.00 руб/шт.
+                                br
+                                | Тираж до 200-300 шт. - 19.00 руб/шт.
+                                br
+                                | Тираж до 500 шт. - 18.00 руб/шт.
+                                br
+                                | Тираж до 1000 шт. - 15.00 руб/шт.
+                                br
+                                | Тираж до 2000 шт. - 12.00 руб/шт.

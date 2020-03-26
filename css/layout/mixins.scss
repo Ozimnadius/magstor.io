@@ -28,6 +28,8 @@ $vh: 1080;
 
   ul {
     li {
+      line-height: lh(16,22.72);
+
       &:before {
         content: '';
         display: inline-block;
@@ -43,8 +45,9 @@ $vh: 1080;
       }
 
       ul {
-        margin-bottom: 0;
-        margin-left: 25px;
+        margin-bottom: 15px;
+        margin-left: 30px;
+        margin-top: 15px;
 
         li {
           &:before {
@@ -58,20 +61,22 @@ $vh: 1080;
   ol {
     margin-bottom: 30px;
     counter-reset: li;
-    margin-left: 20px;
 
     li {
+      line-height: lh(16,22.72);
 
       &:before {
         counter-increment: li;
         content: counters(li, ".") ". ";
         display: inline-block;
         color: #0a0de1;
-        margin-right: 10px;
+        margin-right: 20px;
       }
 
       ol{
-        margin-bottom: 0;
+        margin-bottom: 15px;
+        margin-left: 30px;
+        margin-top: 15px;
       }
     }
 
@@ -83,7 +88,31 @@ $vh: 1080;
 
   p {
     margin-bottom: 15px;
+    line-height: lh(16,22.7);
   }
+
+  table{
+    border-collapse: collapse;
+    width: 100%;
+    td{
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 25px 20px;
+
+      color: #4d4d4d;
+      font-weight: 400;
+      line-height: lh(16px,22.72px);
+      @include sm-block{
+        padding: 15px 10px;
+      }
+    }
+  }
+
+  >*{
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
 }
 
 @mixin headers() {
@@ -92,9 +121,15 @@ $vh: 1080;
   }
   h2 {
     font-size: 35px;
+    @include lg-block{
+      font-size: 34px;
+    }
   }
   h3 {
     font-size: 25px;
+    @include lg-block{
+      font-size: 20px;
+    }
   }
   h4 {
     font-size: 1rem;

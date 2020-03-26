@@ -5,9 +5,10 @@
   border-bottom: 1px solid rgba(#000, .1);
   @include xlg-block {
     margin-left: 0;
+    padding: 35px 0;
   }
   @include lg-block{
-    padding: 35px 0;
+
   }
   @include sm-block{
     padding: 10px 0;
@@ -72,7 +73,8 @@
     left: 0;
     right: 0;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-    display: none;
+    display: block;
+    padding: 20px 0;
     @include tr;
 
     @include xlg-block {

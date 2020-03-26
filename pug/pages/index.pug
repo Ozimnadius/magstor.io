@@ -63,23 +63,7 @@ block content
                     .icatalog__main
                         +title('Каталог','Перейти в каталог','icatalog__title')
                         .icatalog__list
-                            each i in [1,2,3,4,5,6,7]
-                                a(href='/').icitem
-                                    span.icitem__title Текстильные лайтбоксы
-                                    span.icitem__img
-                                        +image('images/content/catalog/' + i + '.jpg','icitem__img-img')
-                                        span.icitem__btn
-                                            +icon('arr-r','icitem__btn-svg')
-                            a(href='/').iclink
-                                span.iclink__title Не знаете, что выбрать?
-                                span.iclink__txt
-                                    | Оставьте заявку
-                                    | на обратный звонок
-                                span.iclink__txt
-                                    | И получите консультацию
-                                    | от специалистов
-                                span.iclink__btn
-                                    +icon('arr-r','iclink__btn-svg')
+                            +catalogList()
         //- advantages
         section.index__advantages
             .iadvantages
