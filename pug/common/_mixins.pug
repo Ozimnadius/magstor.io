@@ -17,7 +17,7 @@ mixin title(title,link,cls)
     div(class=cls).title
         .title__txt= title
         if link
-          a(href='.').title__link= link
+            a(href='.').title__link= link
 
 mixin menu(cls)
     div(class=cls).menu
@@ -83,3 +83,50 @@ mixin catalogList()
             | от специалистов
         span.iclink__btn
             +icon('arr-r','iclink__btn-svg')
+
+mixin item(i)
+    a(href='product.html').item
+        span.item__fake
+            span.item__main
+                span.item__top
+                    span.item__compare
+                        +icon('compare','item__compare-svg')
+                    span.item__fav
+                        +icon('fav','item__fav-svg')
+                    span.item__img
+                        +image(i.src,'item__img-img')
+                span.item__bottom
+                    span.item__title= i.title
+                    span.item__price= i.price
+        span.item__hidden
+            span.item__main
+                span.item__top
+                    span.item__compare
+                        +icon('compare','item__compare-svg')
+                    span.item__fav
+                        +icon('fav','item__fav-svg')
+                    span.item__img
+                        +image(i.src,'item__img-img')
+                span.item__bottom
+                    span.item__title= i.title
+                    span.item__price= i.price
+                span.item__btn
+                    span.item__add Добавить в корзину
+
+
+mixin pagination()
+    .pagination
+        a(href='/').pagination__arr.pagination__arr_left
+            +icon('arr-l','pagination__arr-svg')
+        a(href='/').pagination__item.active
+            span.pagination__item-txt 1
+        a(href='/').pagination__item
+            span.pagination__item-txt 2
+        a(href='/').pagination__item
+            span.pagination__item-txt 3
+        a(href='/').pagination__item
+            span.pagination__item-txt ...
+        a(href='/').pagination__item
+            span.pagination__item-txt 48
+        a(href='/').pagination__arr.pagination__arr_right
+            +icon('arr-r','pagination__arr-svg')

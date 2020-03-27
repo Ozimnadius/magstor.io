@@ -26,6 +26,11 @@ function number_format(number, decimals, dec_point, thousands_sep) {
     return km + kw + kd;
 }
 
+function prettify(num) {
+    var n = num.toString();
+    return n.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + ' ');
+}
+
 function imageResize(src) {
     $('img').not('.logo__img').attr('src', src);
 }

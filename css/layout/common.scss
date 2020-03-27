@@ -16,13 +16,13 @@
   @include tr;
 
 
-  &:hover{
+  &:hover {
     background-color: #325afe;
     border-color: #325afe;
   }
 }
 
-.btn2{
+.btn2 {
   width: 219px;
   height: 45px;
   border-radius: 5px;
@@ -37,30 +37,31 @@
   text-align: center;
   @include tr;
 
-  @include lg-block{
+  @include lg-block {
     font-size: 14px;
   }
-  @include sm-block{
+  @include sm-block {
     width: 158px;
     height: 35px;
   }
 
-  &_b{
+  &_b {
     border: 1px solid #151515;
     color: #151515;
-    &:hover{
+
+    &:hover {
       color: #fff;
     }
   }
 
-  &:hover{
+  &:hover {
     background-color: #325afe;
     border-color: #325afe;
   }
 
 }
 
-.btn3{
+.btn3 {
   width: 157px;
   height: 45px;
   border-radius: 5px;
@@ -75,38 +76,39 @@
   text-align: center;
   @include tr;
 
-  @include lg-block{
+  @include lg-block {
     font-size: 14px;
   }
-  @include sm-block{
+  @include sm-block {
     width: 120px;
     height: 35px;
   }
 
-  &:hover{
+  &:hover {
     background-color: #325afe;
     color: #ffffff;
   }
 }
 
-.title{
+.title {
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  &_2{
+  &_2 {
     justify-content: center;
-    .title__txt{
+
+    .title__txt {
       color: #ffffff;
 
-      &:before{
+      &:before {
         background-color: #f2c94c;
         background-color: #0a0de1;
       }
     }
   }
 
-  &__txt{
+  &__txt {
     color: #151515;
     font-size: 40px;
     font-weight: 600;
@@ -115,13 +117,13 @@
     padding-left: 15px;
     padding-right: 15px;
     white-space: nowrap;
-    @include sm-block{
+    @include sm-block {
       font-size: 18px;
       padding-left: 10px;
       padding-right: 10px;
     }
 
-    &:before{
+    &:before {
       content: '';
       display: block;
       height: 25px;
@@ -131,13 +133,13 @@
       bottom: -3px;
       left: 0;
       right: 0;
-      @include sm-block{
+      @include sm-block {
         height: 13px;
       }
     }
   }
 
-  &__link{
+  &__link {
 
     font-size: 18px;
     font-weight: 500;
@@ -145,45 +147,66 @@
     color: #13131D;
     @include tr;
 
-    @include sm-block{
+    @include sm-block {
       font-size: 12px;
       display: none;
     }
 
-    &:hover{
+    &:hover {
       color: #325afe;
     }
   }
 
 }
 
-.bread{
+.bread {
 
   &__link {
     padding: 0 15px;
-    border-right: 1px solid rgba(#000,.5);
-    line-height: 28px;
-    @include sm-block{
+    border-right: 1px solid rgba(#000, .5);
+    position: relative;
+    cursor: pointer;
+    @include tr;
+
+    @include sm-block {
       line-height: 14.26px;
       padding: 0 10px;
     }
 
-    &:first-child{
+    &:hover{
+      .bread__link-txt {
+        color: #325afe;
+      }
+      .bread__list{
+        display: block;
+      }
+    }
+
+    &:first-child {
       padding-left: 0;
     }
 
-    &.active{
+    &.active {
       border-color: transparent;
-
+      &:hover{
+        cursor: initial;
+        .bread__link-txt{
+          color: rgba(#000000, .5);
+        }
+      }
     }
 
-    &-svg{
+    &:last-child{
+      border-color: transparent;
+    }
+
+    &-svg {
       width: 28px;
       height: 28px;
       fill: #f2c94c;
       display: inline;
       margin-bottom: -6px;
-      @include sm-block{
+      @include sm-block {
         width: 18px;
         height: 18px;
         margin-bottom: -2px;
@@ -191,12 +214,68 @@
     }
 
     &-txt {
-      color: rgba(#000000,.5);
+      color: rgba(#000000, .5);
       font-size: 16px;
       font-weight: 400;
-      @include sm-block{
+      @include sm-block {
         font-size: 12px;
       }
+    }
+
+  }
+
+  &__list {
+    position: absolute;
+    z-index: 10;
+    top: calc(100% + 15px);
+    left: 50%;
+    width: 300px;
+    margin-left: -150px;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    display: none;
+    @include sm-block{
+      width: 200px;
+      padding: 15px 10px;
+      margin-left: -100px;
+    }
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 9px 13px 9px;
+      border-color: transparent transparent #fff transparent;
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -6.5px;
+    }
+
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 100%;
+      height: 20px;
+    }
+
+  }
+
+  &__sublink {
+    display: block;
+    line-height: lh(16, 23);
+    padding: 1px 0;
+    color: #000000;
+    @include tr;
+
+    &:hover{
+      color: #325afe;
     }
   }
 }

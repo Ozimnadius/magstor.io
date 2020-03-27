@@ -1,0 +1,265 @@
+extends ../main
+
+block variables
+    - var title = 'Рюкзаки'
+    - var main = false
+
+block content
+    .category
+        //- top
+        .category__top
+            .container
+                //- bread
+                .category__bread.bread
+                    a(href='/').bread__link
+                        +icon('home','bread__link-svg')
+                    a(href='catalog.html').bread__link
+                        span.bread__link-txt Каталог
+                    span.bread__link
+                        span.bread__link-txt Рюкзаки
+                        span.bread__list
+                            each i in [1,2,3,4,5,6,7,8,9,10,11,12]
+                                a(href='').bread__sublink Модель "Avangard"
+
+                //- title
+                h1.category__title Рюкзаки
+
+        //- cats
+        .category__cats
+            .container
+                .ccats
+                    .ccats__list
+                        each i in [1,2,3,4,5,6,7,8,9,10,11,12]
+                            a(href='/').ccats__item.ccat
+                                span.ccat__top
+                                    span.ccat__img
+                                        picture
+                                            source(srcset='images/content/catalog/category/' + i + '.jpg' type='image/jpeg' media='(min-width:767.9px)')
+                                            source(srcset='images/content/catalog/category/' + i + 'm.jpg' type='image/jpeg' media='(min-width:319.9px)')
+                                            img(src='images/content/catalog/category/' + i + '.jpg' alt='lorem1').ccat__img-img
+                                span.ccat__title Модель "Avangard"
+
+
+                    a(href='/').ccats__back
+                        +icon('arrow2-l','ccats__back-svg')
+                        span.ccats__back-txt Назад
+        //- list
+        .category__list
+            .container
+                .clist
+                    .clist__title Все товары раздела
+                    .clist__filters
+                        //- btn
+                        button(type='button').clist__btn.jsFiltersOpen
+                            +icon('filter', 'clist__btn-svg')
+                            span.clist__btn-txt ФИЛЬТР
+                        //- sort
+                        .clist__sort
+                            .csort.jsHoverLink
+                                .csort__title По популярности (возрастание)
+                                .csort__drop
+                                    each i in catalogSort
+                                        a(href='/' class=i.cls).csort__link= i.title
+                        //- filters
+                        form(action='/' method='post').filters.clist__form
+                            //- top
+                            .filters__top
+                                .filters__title
+                                    +icon('filter', 'filters__title-svg')
+                                    span.filters__title-txt ФИЛЬТР
+                                button(type='button').filters__close.jsFiltersClose
+                                    +icon('close', 'filters__close-svg')
+                            //- list
+                            .filters__list
+                                //.filters__item
+                                //    .filter.filter_sort
+                                //        .filter__top
+                                //            button(type='button').filter__btn
+                                //                span.filter__btn-txt Сортировать: По умолчанию
+                                //                +icon('arr-b', 'filter__btn-svg')
+                                //        .filter__bottom.filter__bottom_0
+                                //            .csort__drop
+                                //                each i in catalogSort
+                                //                    a(href='/' class=i.cls).csort__link= i.title
+                                .filters__item
+                                    .filter
+                                        .filter__top
+                                            button(type='button').filter__btn
+                                                span.filter__btn-txt Цена
+                                                +icon('arr-b', 'filter__btn-svg')
+                                            button(type='button').filter__clear
+                                                +icon('close', 'filter__clear-svg')
+                                        .filter__bottom
+                                            .filter__range
+                                                .range
+                                                    //- fields
+                                                    .range__fields
+                                                        label.range__field
+                                                            input(type='text' name='from' value='390').range__input.range__input_from
+                                                        .range__fields-seporator
+                                                        label.range__field
+                                                            input(type='text' name='to' value='27 000').range__input.range__input_to
+                                                    //- slider
+                                                    input(type='text' name='range' value='' data-type='double' data-min='0' data-max='27000' data-from='390' data-to='27000').range__slider
+                                .filters__item
+                                    .filter
+                                        .filter__top
+                                            button(type='button').filter__btn
+                                                span.filter__btn-txt Бренд
+                                                +icon('arr-b', 'filter__btn-svg')
+                                            button(type='button').filter__clear
+                                                +icon('close', 'filter__clear-svg')
+                                        .filter__bottom
+                                            .filter__checks.checks
+                                                each i in ['Модель "Avangard"','Модель "Avangard"','Модель "Avangard"','Модель "Avangard"','Модель "Avangard" ','Модель "Avangard"','Модель "Avangard"','Модель "Avangard"']
+                                                    label.check
+                                                        input(type='checkbox' name='brend' value=i).check__input
+                                                        span.check__fake
+                                                            span.check__check
+                                                                +icon('check2','check__check-svg')
+                                                            span.check__title= i
+                                .filters__item
+                                    .filter
+                                        .filter__top
+                                            button(type='button').filter__btn
+                                                span.filter__btn-txt Модель
+                                                +icon('arr-b', 'filter__btn-svg')
+                                            button(type='button').filter__clear
+                                                +icon('close', 'filter__clear-svg')
+                                        .filter__bottom
+                                            .filter__checks.checks
+                                                each i in ['Модель "Avangard"','Модель "Avangard"','Модель "Avangard"','Модель "Avangard"','Модель "Avangard" ','Модель "Avangard"','Модель "Avangard"','Модель "Avangard"']
+                                                    label.check
+                                                        input(type='checkbox' name='model' value=i).check__input
+                                                        span.check__fake
+                                                            span.check__check
+                                                                +icon('check2','check__check-svg')
+                                                            span.check__title= i
+                                .filters__item
+                                    .filter
+                                        .filter__top
+                                            button(type='button').filter__btn
+                                                span.filter__btn-txt Цвет
+                                                +icon('arr-b', 'filter__btn-svg')
+                                            button(type='button').filter__clear
+                                                +icon('close', 'filter__clear-svg')
+                                        .filter__bottom
+                                            .filter__checks.checks
+                                                each i in ['Белый','Серый','Коричневый ','Желтый']
+                                                    label.check
+                                                        input(type='checkbox' name='color' value=i).check__input
+                                                        span.check__fake
+                                                            span.check__check
+                                                                +icon('check2','check__check-svg')
+                                                            span.check__title= i
+                                .filters__item
+                                    .filter
+                                        .filter__top
+                                            button(type='button').filter__btn
+                                                span.filter__btn-txt Размер
+                                                +icon('arr-b', 'filter__btn-svg')
+                                            button(type='button').filter__clear
+                                                +icon('close', 'filter__clear-svg')
+                                        .filter__bottom
+                                            .filter__checks.checks
+                                                each i in ['100x10','200x10','220x10 ','500x20']
+                                                    label.check
+                                                        input(type='checkbox' name='size' value=i).check__input
+                                                        span.check__fake
+                                                            span.check__check
+                                                                +icon('check2','check__check-svg')
+                                                            span.check__title= i
+
+
+
+
+
+                            //- bottom
+                            .filters__bottom
+                                //- submit
+                                button(type='submit').filters__submit Показать 48 товаров
+                                //- reset
+                                button(type='reset').filters__reset
+                                    +icon('cycle', 'filters__reset-svg')
+                                    +icon('close', 'filters__reset-close')
+                                    span.filters__reset-txt Очистить фильтр
+                    .clist__list
+                        each i in clist
+                            .clist__item
+                                +item(i)
+
+
+                    button(type='button').clist__more
+                        span.clist__more-txt Загрузить еще
+                        +icon('cycle','clist__more-svg')
+                    .clist__pag
+                        +pagination()
+        //- content
+        .category__bottom
+            .container
+                .content
+                    p ЭТО SEO текст! Наша компания обладает современным оборудованием для тиснения логотипов на изделиях из натуральной и искусственной кожи, включая обложки ежедневников. Логотип золотого, серебряного или другого нужного цвета выдавливается в материале под воздействием температуры и давления. Вы можете разместить заказ на тиснение по коже фольгой или без нее позвонив по телефону +7 495 369-53-75
+                    h3 Наши преимущества:
+                    ol
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                            ol
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                    ul
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                            ul
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                                li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+                        li Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, quos!
+
+                    h2 Цены на тиснение логотипа
+                    p Наша компания обладает современным оборудованием для тиснения логотипов на изделиях из натуральной и искусственной кожи, включая обложки ежедневников. Логотип золотого, серебряного или другого нужного цвета выдавливается в материале под воздействием температуры и давления. Вы можете разместить заказ на тиснение по коже фольгой или без нее позвонив по телефону +7 495 369-53-75
+                    h3 Цены на блинтовое тиснение:
+                    table
+                        tr
+                            td Блинтовое тиснение — до 50 см2 — Ежедневники из кожзаменителя:
+                            td Блинтовое тиснение — от 50 см2 — ежедневники из кожзаменителя:
+                        tr
+                            td
+                                | Тираж до 50 шт. - 1300/тираж
+                                br
+                                | Тираж до 100 шт. - 20.00 руб/шт.
+                                br
+                                | Тираж до 200-300 шт. - 19.00 руб/шт.
+                                br
+                                | Тираж до 500 шт. - 18.00 руб/шт.
+                                br
+                                | Тираж до 1000 шт. - 15.00 руб/шт.
+                                br
+                                | Тираж до 2000 шт. - 12.00 руб/шт.
+                            td
+                                | Тираж до 50 шт. - 1300/тираж
+                                br
+                                | Тираж до 100 шт. - 20.00 руб/шт.
+                                br
+                                | Тираж до 200-300 шт. - 19.00 руб/шт.
+                                br
+                                | Тираж до 500 шт. - 18.00 руб/шт.
+                                br
+                                | Тираж до 1000 шт. - 15.00 руб/шт.
+                                br
+                                | Тираж до 2000 шт. - 12.00 руб/шт.

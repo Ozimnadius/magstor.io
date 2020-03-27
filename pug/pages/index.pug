@@ -87,25 +87,7 @@ block content
                     .ipops__list
                         each i in ipops
                             .ipops__item
-                                a(href='product.html').item
-                                    span.item__fake
-                                        span.item__main
-                                            span.item__top
-                                                span.item__img
-                                                    +image(i.src,'item__img-img')
-                                            span.item__bottom
-                                                span.item__title= i.title
-                                                span.item__price= i.price
-                                    span.item__hidden
-                                        span.item__main
-                                            span.item__top
-                                                span.item__img
-                                                    +image(i.src,'item__img-img')
-                                            span.item__bottom
-                                                span.item__title= i.title
-                                                span.item__price= i.price
-                                            span.item__btn
-                                                span.item__add Добавить в корзину
+                                +item(i)
         //- proj
         section.index__proj
             .iproj.icatalog
