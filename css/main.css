@@ -3085,7 +3085,6 @@ input, textarea {
 }
 
 .category__list {
-  padding-top: 50px;
   padding-bottom: 65px;
 }
 
@@ -3093,6 +3092,16 @@ input, textarea {
   .category__list {
     padding-top: 35px;
     padding-bottom: 35px;
+  }
+}
+
+.category__list_2 {
+  padding-top: 50px;
+}
+
+@media screen and (max-width: 767.99px) {
+  .category__list_2 {
+    padding-top: 35px;
   }
 }
 

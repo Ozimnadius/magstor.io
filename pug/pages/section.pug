@@ -1,7 +1,7 @@
 extends ../main
 
 block variables
-    - var title = 'Рюкзаки'
+    - var title = 'Модель "Avangard"'
     - var main = false
 
 block content
@@ -22,14 +22,33 @@ block content
                                 a(href='').bread__sublink Модель "Avangard"
 
                 //- title
-                h1.category__title Рюкзаки
+                h1.category__title Модель "Avangard"
 
+        //- cats
+        .category__cats
+            .container
+                .ccats
+                    .ccats__list
+                        each i in [1,2,3,4,5,6,7,8,9,10,11,12]
+                            a(href='/').ccats__item.ccat
+                                span.ccat__top
+                                    span.ccat__img
+                                        picture
+                                            source(srcset='images/content/catalog/category/' + i + '.jpg' type='image/jpeg' media='(min-width:767.9px)')
+                                            source(srcset='images/content/catalog/category/' + i + 'm.jpg' type='image/jpeg' media='(min-width:319.9px)')
+                                            img(src='images/content/catalog/category/' + i + '.jpg' alt='lorem1').ccat__img-img
+                                span.ccat__title Модель "Avangard"
+
+
+                    a(href='/').ccats__back
+                        +icon('arrow2-l','ccats__back-svg')
+                        span.ccats__back-txt Назад
 
         //- list
-        .category__list
+        .category__list.category__list_2
             .container
                 .clist
-                    //.clist__title Все товары раздела
+                    .clist__title Все товары раздела
                     .clist__filters
                         //- btn
                         button(type='button').clist__btn.jsFiltersOpen

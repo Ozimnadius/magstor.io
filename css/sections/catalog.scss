@@ -273,11 +273,17 @@
   }
 
   &__list {
-    padding-top: 50px;
     padding-bottom: 65px;
     @include sm-block{
       padding-top: 35px;
       padding-bottom: 35px;
+    }
+
+    &_2{
+      padding-top: 50px;
+      @include sm-block{
+        padding-top: 35px;
+      }
     }
   }
 
@@ -1035,5 +1041,7 @@
   }
 
 }
+
+
 
 
