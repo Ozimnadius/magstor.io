@@ -1,0 +1,182 @@
+extends ../main
+
+block variables
+    - var title = 'Рюкзак RELS Avangard 84 0523'
+    - var main = false
+
+block content
+    .product
+        //- top
+        .product__top
+            .container
+                //- bread
+                .product__bread.bread
+                    a(href='/').bread__link
+                        +icon('home','bread__link-svg')
+                    a(href='catalog.html').bread__link
+                        span.bread__link-txt Каталог
+                    span.bread__link
+                        span.bread__link-txt Рюкзак RELS Avangard 84 0523
+
+                //- mobile
+                .product__mobile
+                    .product__logo
+                        +image('images/content/product/logo.svg','product__logo-img')
+                    h1.product__title Тканевый лайтбокс 2AA, односторонний
+                //- row
+                .product__row.row
+                    //- left
+                    .product__left
+                        //- slider
+                        .product__slider.pslider
+                            button(type='button').pslider__arr.pslider__prev
+                                +icon('arr-up','pslider__arr-svg')
+                            .pslider__wrap
+                                .swiper-container.pslider__container
+                                    .swiper-wrapper
+                                        each i in [1,2,3,4,5,6]
+                                            div(data-src='images/content/product/img.jpg').swiper-slide.pslide
+                                                .pslide__wrap
+                                                    +image('images/content/product/thumb.jpg','pslide__img')
+
+
+                            button(type='button').pslider__arr.pslider__next
+                                +icon('arr-down','pslider__arr-svg')
+
+                        //- img
+                        .product__img
+                            .product__img-wrap
+                                +image('images/content/product/img.jpg','product__img-img')
+
+                    //- right
+                    .product__right
+                        .product__tablet
+                            .product__logo
+                                +image('images/content/product/logo.svg','product__logo-img')
+                            h1.product__title Тканевый лайтбокс 2AA, односторонний
+                        .product__code Код товара: LIGHTBOX 2AA
+                        .product__desc Текстильная световая панель, форматом 2AA, односторонняя
+                        .product__price
+                            .product__price-price 38 000 р.
+                            button(type='button').product__one.jsOne Купить в один клик
+                        .product__btns
+                            .product__count
+                                .cnt
+                                    button(type='button').cnt__btn.cnt__minus -
+                                    input(type='text' name='count' value=1 readonly=true).cnt__input
+                                    button(type='button').cnt__btn.cnt__plus +
+                            button(type='button').product__add Добавить в корзину
+        //- middle
+        .product__middle
+            .container
+                .product__sws
+                    button(type='button' data-id=1).product__sw.active Описание
+                    button(type='button' data-id=2).product__sw Характеристики
+                .product__tabs
+                    div(data-id=1).product__tab.active
+                        .product__content
+                            .content
+                                p Наша компания обладает современным оборудованием и прекрасными специалистами, что позволяет в кратчайшие сроки изготавливать максимально качественные текстильные световые лайтбоксы. Вы можете связаться с нами для консультации и оформления заказа позвонив по телефону: +7 495 369-53-75.
+                                h3 Стоимость Текстильных коробов
+                                table
+                                    tr
+                                        td Размер короба, глубина 80 мм
+                                        td Стоимость короба
+                                    tr
+                                        td
+                                            | 600*1000 мм
+                                            br
+                                            | 1000*1500 мм
+                                            br
+                                            | 1500*3000 мм
+                                        td
+                                            | 13 200 р.
+                                            br
+                                            | 22 500 р.
+                                            br
+                                            | 56 250 р.
+
+                                h3 Наши преимущества:
+                                ol
+                                    li Мы работаем исключительно на современном оборудовании.
+                                    li Качество тиснения логотипов на коже гарантировано многолетним опытом.
+                                    li У нас работают высококвалифицированные специалисты.
+                                    li Мы оказываем профессиональную помощь в создании уникальной сувенирной и корпоративной продукции.
+                                    li Мы выполним свою работу по тиснению логотипа на коже лучше чем вы можете предположить!
+                                    li Низкие цены на услуги.
+                                p Текстильный лайтбокс относится к эффективным инструментам для рекламы.
+                                p Лайтбокс относится к эффективнейшим инструментам, которые привлекают потребительское внимание как к компании, так и к продукту, которые рекламируют. Благодаря световым тканевым коробам осуществляется оформление помещений для офисов и атриумов, холлов здания администрации и торговли, комплексов для проведения выставок. Возможно использование светового короба из текстиля в виде довольно оригинального элемента декора комнаты для жилья.
+                                h3 ДОСТОИНСТВА, ХАРАКТЕРНЫЕ ДЛЯ ДАННЫХ КОНСТРУКЦИЙ
+                                p К основным плюсам относят:
+                                ul
+                                    li
+                                        | Надежность, благодаря внутреннему размещению светового источника.
+                                        br
+                                        | Нахождение проводки с диодами внутри самого корпуса. Таким образом они защищены от различных повреждений и возможного проникновения влаги и пыли. Это увеличивает пожарную безопасность и делает более простой эксплуатацию продукта. Чтобы включить текстильный лайтбокс, нужно всего-то его подключить к источнику питания, роль которого чаще всего выполняет бытовая электросеть.
+                                    li
+                                        | Простоту монтажа.
+                                        br
+                                        | Специальная установка для тканевого светового короба не требуется. Благодаря этому возможно использование конструкций в различного рода помещениях.
+                                    li
+                                        |Простую замену носителя информации.
+                                        br
+                                        | Используемые в световом текстильном коробе плакаты имеют тканевую основу. На полотно изображение наносится благодаря методике ультрафиолетовой, сублимационной печати, что способствует высокой детализированности, насыщенности, четкости картинок. Текстильный лайтбокс может использоваться на протяжении длительного срока. Этому способствует то, что со временем постер не побледнеет, не выцветет.
+                                a(data-fancybox href='https://www.youtube.com/watch?v=_sI_Ps7JSEk' style='display:block; max-width: 550px; margin: 0 auto; margin-bottom: 30px;')
+                                    img(src='images/content/product/yt.jpg' alt='lorem1')
+                                h3 Примеры работ
+                                .row
+                                    each i in [1,2,3,4]
+                                        .col-6
+                                            a(href='images/content/product/'+i+'.jpg' data-fancybox='images')
+                                                img(src='images/content/product/'+i+'.jpg' alt='lorem1')
+
+
+
+
+                    div(data-id=2).product__tab
+                        .product__content
+                            table.product__chars
+                                tr
+                                    td Формат
+                                    td 2AA
+                                tr
+                                    td Видимое изображение (мм)
+                                    td 1200×1500
+                                tr
+                                    td Размер постера (мм)
+                                    td 1200×1500
+                                tr
+                                    td Потребляемая мощность (Вт)
+                                    td 260
+                                tr
+                                    td Количество сторон
+                                    td 1
+                                tr
+                                    td Вес (кг)
+                                    td 15
+        //- bottom
+        .product__bottom
+            //- proj
+            .product__proj
+                .container
+                    +icatalog()
+            //- reccom
+            .product__recom
+                .precom
+                    .container
+                        .precom__title C этим товаром смотрят
+                        .precom__slider
+                            button(type='button').precom__arr.precom__prev
+                                +icon('arr-l','precom__arr-svg')
+                            .swiper-container.precom__container
+                                .swiper-wrapper
+                                    each i in clist
+                                        .swiper-slide.precom__slide
+                                            +item(i)
+                            button(type='button').precom__arr.precom__next
+                                +icon('arr-r','precom__arr-svg')
+
+
+
+
+

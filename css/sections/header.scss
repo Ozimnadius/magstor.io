@@ -254,6 +254,11 @@
       &:hover {
         color: $bg;
         border-color: #325afe;
+        @include sm-block{
+          background-color: transparent;
+          border-color: transparent;
+          color: initial;
+        }
       }
     }
   }

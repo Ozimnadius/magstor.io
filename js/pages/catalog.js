@@ -1,4 +1,4 @@
-//header.js
+//catalog.js
 $(function () {
 
     // VARIABLES

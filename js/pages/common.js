@@ -37,3 +37,22 @@ function imageResize(src) {
 // imageResize('https://loremflickr.com/320/440');
 
 const wWidth = $(window).width();
+
+$('.cnt__btn').on('click', function (e) {
+    let btn = $(this),
+        cnt = btn.closest('.cnt'),
+        count = cnt.find('.cnt__input'),
+        val = count.val();
+    if (btn.hasClass('cnt__plus')) {
+        val++
+    } else {
+        if (val > 1) {
+            val--
+        }
+    }
+    count.val(val);
+
+    if (btn.hasClass('order__cnt-btn')) {
+        calcTotal();
+    }
+});

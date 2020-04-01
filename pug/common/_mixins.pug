@@ -113,7 +113,6 @@ mixin item(i)
                 span.item__btn
                     span.item__add Добавить в корзину
 
-
 mixin pagination()
     .pagination
         a(href='/').pagination__arr.pagination__arr_left
@@ -130,3 +129,40 @@ mixin pagination()
             span.pagination__item-txt 48
         a(href='/').pagination__arr.pagination__arr_right
             +icon('arr-r','pagination__arr-svg')
+
+mixin icatalog()
+    .icatalog__main
+        +title('Выполненные проекты','Перейти в раздел','icatalog__title')
+        .icatalog__list
+            a(href='/').icbig
+                span.icbig__img
+                    +image('images/content/catalog/big.jpg','icbig__img-img')
+                span.icbig__top
+                    span.icbig__date 12.12.2019
+                    span.icbig__proj Проекты
+                span.icbig__title Анимационный тканевый лайтбокс для ТЕЛЕ2
+                span.icitem__btn.icbig__btn
+                    +icon('arr-r','icitem__btn-svg icbig__btn-svg')
+
+
+            each i in [3,4,5,6,7]
+                a(href='/').icitem.icitem_p
+                    span.icitem__title
+                        span.icitem__title-top
+                            span.icitem__title-date 12.12.2019
+                            span.icitem__title-proj Проекты
+                        span.icitem__title-title Текстильные лайтбоксы
+                    span.icitem__img
+                        +image('images/content/catalog/' + i + '.jpg','icitem__img-img')
+                        span.icitem__btn
+                            +icon('arr-r','icitem__btn-svg')
+            a(href='/').iclink
+                span.iclink__title Не знаете, что выбрать?
+                span.iclink__txt
+                    | Оставьте заявку
+                    | на обратный звонок
+                span.iclink__txt
+                    | И получите консультацию
+                    | от специалистов
+                span.iclink__btn.icbig__btn
+                    +icon('arr-r','iclink__btn-svg')
