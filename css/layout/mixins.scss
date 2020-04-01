@@ -30,6 +30,7 @@ $vh: 1080;
     li {
       line-height: lh(16,22.72);
       display: flex;
+      flex-wrap: wrap;
       align-items: baseline;
 
       &:before {
@@ -68,6 +69,7 @@ $vh: 1080;
     li {
       line-height: lh(16,22.72);
       display: flex;
+      flex-wrap: wrap;
       align-items: baseline;
 
       &:before {

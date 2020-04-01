@@ -47,6 +47,10 @@
     flex-direction: column;
     @include tr;
 
+    @include sm-block{
+      right: -100%;
+    }
+
     &.active{
       right: 0;
     }
