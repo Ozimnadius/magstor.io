@@ -135,5 +135,89 @@ $(function () {
     let rangeSlider = $(".range__slider").data("ionRangeSlider");
 
 
+});
+
+//popup.js
+$(function () {
+    let popup = $('.popup'),
+        popupWrapper = popup.find('.popup__wrapper');
+
+
+    $('.jsCall').on('click', function (e) {
+        e.preventDefault();
+        let $this = $(this),
+            template = $(document.querySelector('#tmpl').content),
+            html = template.find('.callback').clone();
+
+        popupWrapper.html(html);
+        popup.addClass('active');
+        $('.form').validate(
+            {
+                rules: {
+                    name: "required",
+                    tel: "required"
+                },
+                messages: {
+                    name: "Необходимо указать Ваше имя",
+                    tel: "Необходимо указать номер телефона"
+                },
+                errorPlacement: function (error, element) {
+                    element[0].placeholder = error[0].innerText;
+                },
+                submitHandler: function (form) {
+                    //ToDo здесь должен быть ajax, при успешной отправке данных перелистывается на следующий слайд
+                    success();
+                },
+            }
+        );
+    });
+
+    $('.jsBuy').on('click', function (e) {
+        e.preventDefault();
+        let $this = $(this),
+            template = $(document.querySelector('#tmpl').content),
+            html = template.find('.callbuy').clone();
+
+        popupWrapper.html(html);
+        popup.addClass('active');
+        $('.form').validate(
+            {
+                rules: {
+                    name: "required",
+                    tel: "required"
+                },
+                messages: {
+                    name: "Необходимо указать Ваше имя",
+                    tel: "Необходимо указать номер телефона"
+                },
+                submitHandler: function (form) {
+                    //ToDo здесь должен быть ajax, при успешной отправке данных перелистывается на следующий слайд
+                    success();
+                },
+                errorPlacement: function (error, element) {
+                    element[0].placeholder = error[0].innerText;
+                }
+            }
+        );
+    });
+
+    popup.on('click', function (e) {
+        let target = $(e.target);
+
+        if (target.closest('.popup__wrapper').length === 0){
+            popup.removeClass('active');
+        }
+    });
+
+    $('body').on('click', '.jsCloseForm', function (e) {
+        e.preventDefault();
+        popup.removeClass('active');
+    });
+
+    function success() {
+        let template = $(document.querySelector('#tmpl').content),
+            html = template.find('.success').clone();
+        popupWrapper.html(html);
+    }
 
 });

@@ -10,9 +10,12 @@
   display: none;
 
   @include tr;
-  @include lg-block{
+  @include xlg-block{
     display: block;
     left: -400px;
+  }
+  @include lg-block{
+
   }
   @include sm-block{
     width: 100%;

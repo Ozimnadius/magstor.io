@@ -31,11 +31,11 @@ mixin menu(cls)
                         a(href='/').nav__item наши проекты
                         a(href='/').nav__item Контакты
                 .header__controls
-                    a(href='/').header__control
-                        +icon('basket', 'header__control-svg header__control-svg_basket')
-                        span.header__control-count 1
-                    a(href='/').header__control
-                        +icon('cabinet', 'header__control-svg header__control-svg_cabinet')
+                    //a(href='/').header__control
+                    //    +icon('basket', 'header__control-svg header__control-svg_basket')
+                    //    span.header__control-count 1
+                    //a(href='/').header__control
+                    //    +icon('cabinet', 'header__control-svg header__control-svg_cabinet')
                     a(href='/').header__control
                         +icon('loop', 'header__control-svg header__control-svg_loop')
                 .header__contacts
@@ -110,8 +110,8 @@ mixin item(i)
                 span.item__bottom
                     span.item__title= i.title
                     span.item__price= i.price
-                span.item__btn
-                    span.item__add Добавить в корзину
+                span.item__btn.jsBuy
+                    span.item__add Заказать товар
 
 mixin pagination()
     .pagination

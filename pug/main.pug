@@ -39,11 +39,11 @@ html(lang="ru")
                             each i in nav
                                 a(href=i.href).nav__item= i.title
                     .header__controls
-                        a(href='/').header__control
-                            +icon('basket', 'header__control-svg header__control-svg_basket')
-                            span.header__control-count 1
-                        a(href='/').header__control
-                            +icon('cabinet', 'header__control-svg header__control-svg_cabinet')
+                        //a(href='/').header__control
+                        //    +icon('basket', 'header__control-svg header__control-svg_basket')
+                        //    span.header__control-count 1
+                        //a(href='/').header__control
+                        //    +icon('cabinet', 'header__control-svg header__control-svg_cabinet')
                         a(href='/').header__control
                             +icon('loop', 'header__control-svg header__control-svg_loop')
                     .header__contacts
@@ -222,18 +222,18 @@ html(lang="ru")
                 .header__left
                     button(type='button').header__btn-aside.jsMenuOpen
                         +icon('menu','')
-                    .header__logo
+                    a(href='/').header__logo
                         +image('images/icons/logo-black.svg','header__logo-img')
                 .header__nav
                     .nav
                         each i in nav
                             a(href=i.href).nav__item= i.title
                 .header__controls
-                    a(href='/').header__control
-                        +icon('basket', 'header__control-svg header__control-svg_basket')
-                        span.header__control-count 1
-                    a(href='/').header__control
-                        +icon('cabinet', 'header__control-svg header__control-svg_cabinet')
+                    //a(href='/').header__control
+                    //    +icon('basket', 'header__control-svg header__control-svg_basket')
+                    //    span.header__control-count 1
+                    //a(href='/').header__control
+                    //    +icon('cabinet', 'header__control-svg header__control-svg_cabinet')
                     a(href='/').header__control
                         +icon('loop', 'header__control-svg header__control-svg_loop')
                 .header__contacts
@@ -258,11 +258,11 @@ html(lang="ru")
                     //- right
                     .mmenu__top-right
                         .mmenu__controls
-                            a(href='/').mmenu__control
-                                +icon('basket', 'mmenu__control-svg mmenu__control-svg_basket')
-                                span.mmenu__control-count 1
-                            a(href='/').mmenu__control
-                                +icon('cabinet', 'mmenu__control-svg mmenu__control-svg_cabinet')
+                            //a(href='/').mmenu__control
+                            //    +icon('basket', 'mmenu__control-svg mmenu__control-svg_basket')
+                            //    span.mmenu__control-count 1
+                            //a(href='/').mmenu__control
+                            //    +icon('cabinet', 'mmenu__control-svg mmenu__control-svg_cabinet')
                             a(href='/').mmenu__control
                                 +icon('loop', 'mmenu__control-svg mmenu__control-svg_loop')
 
@@ -332,6 +332,67 @@ html(lang="ru")
                         a(href='tel:+7(495)369-53-75').mmenu__contact +7 (495) 369-53-75
                         a(href='mailto:info@magstor.ru').mmenu__contact info@magstor.ru
 
+
+
+
+
+
+
+        //- popup
+        .popup
+            .popup__wrapper
+
+        //- template
+        template#tmpl
+            form(action='ajax.php' method='post').form.callback
+                button(type='button').form__close.jsCloseForm.
+                    <svg viewBox="0 0 14 14" class='form__close-svg' xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 1.4L12.6 0L7 5.6L1.4 0L0 1.4L5.6 7L0 12.6L1.4 14L7 8.4L12.6 14L14 12.6L8.4 7L14 1.4Z"/>
+                    </svg>
+
+                .form__title Обратный звонок
+                .form__fields
+                    .form__field
+                        input(type='text' name='name' placeholder='Ваше имя').input
+                    .form__field
+                        input(type='tel' name='tel' placeholder='Телефон').input
+                    .form__field
+                        input(type='email' name='email' placeholder='Email').input
+                    .form__field
+                        textarea(name='comment' placeholder='Комментарий').input.input_area
+                .form__fz
+                    | Заполняя данную форму Вы соглашаетесь с&nbsp;
+                    a(href='/').form__fz-link Политикой обработки персональных данных
+                .form__buttons
+                    button(type='submit').form__button.btn2.btn2_b Отправить
+            form(action='ajax.php' method='post').form.callbuy
+                button(type='button').form__close.jsCloseForm.
+                    <svg viewBox="0 0 14 14" class='form__close-svg' xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 1.4L12.6 0L7 5.6L1.4 0L0 1.4L5.6 7L0 12.6L1.4 14L7 8.4L12.6 14L14 12.6L8.4 7L14 1.4Z"/>
+                    </svg>
+                .form__title Заказать товар
+                .form__fields
+                    .form__field
+                        input(type='text' name='name' placeholder='Ваше имя').input
+                    .form__field
+                        input(type='tel' name='tel' placeholder='Телефон').input
+                    .form__field
+                        input(type='email' name='email' placeholder='Email').input
+                    .form__field
+                        textarea(name='comment' placeholder='Комментарий').input.input_area
+                .form__fz
+                    | Заполняя данную форму Вы соглашаетесь с&nbsp;
+                    a(href='/').form__fz-link Политикой обработки персональных данных
+                .form__buttons
+                    button(type='submit').form__button.btn2.btn2_b Отправить
+            form(action='ajax.php' method='post').form.success
+                button(type='button').form__close.jsCloseForm.
+                    <svg viewBox="0 0 14 14" class='form__close-svg' xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 1.4L12.6 0L7 5.6L1.4 0L0 1.4L5.6 7L0 12.6L1.4 14L7 8.4L12.6 14L14 12.6L8.4 7L14 1.4Z"/>
+                    </svg>
+                .form__title Спасибо
+                .form__sub Ваша заявка принята в работу. Ожидайте звонка.
+                button(type='submit').form__button.success__button.jsCloseForm.btn2.btn2_b Вернуться к сайту
 
 
 

@@ -4,10 +4,17 @@ header('Content-Type: application/json');
 $data = $_POST;
 $action = $data['action'];
 switch ($action) {
-    case 'callorderSubmit':
+    case 'callback':
         echo json_encode(array(
             'status' => true,
-            'html' => '<div class="callorder__success">Спасибо мы скоро с Вами свяжемся.</div>'
+            'html' => getCallbackForm()
+        ));
+        exit();
+        break;
+    case 'callbackSubmit':
+        echo json_encode(array(
+            'status' => true,
+            'html' => getCallbackSubmitForm()
         ));
         exit();
         break;
@@ -18,3 +25,27 @@ switch ($action) {
         exit();
         break;
 }
+
+function getCallbackForm()
+{
+    ob_start();
+    ?>
+
+    <?
+    $html = ob_get_contents();
+    ob_end_clean();
+    return $html;
+}
+
+function getCallbackSubmitForm()
+{
+    ob_start();
+    ?>
+
+    <?
+    $html = ob_get_contents();
+    ob_end_clean();
+    return $html;
+}
+
+?>

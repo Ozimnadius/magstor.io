@@ -44,6 +44,15 @@ body {
   @include xlg-block{
     margin-left: 0;
   }
+
+  &__content{
+    padding-top: 30px;
+    padding-bottom: 120px;
+  }
+
+  &__bread{
+    margin-bottom: 20px;
+  }
 }
 
 .container {

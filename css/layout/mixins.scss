@@ -22,6 +22,7 @@ $vh: 1080;
 
 @mixin content() {
 
+
   ul,ol{
     margin-bottom: 50px;
   }
@@ -29,9 +30,8 @@ $vh: 1080;
   ul {
     li {
       line-height: lh(16,22.72);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
+      position: relative;
+      padding-left: 25px;
 
       &:before {
         content: '';
@@ -42,15 +42,15 @@ $vh: 1080;
         height: 6px;
         background-color: #0a0de1;
         border-radius: 50%;
-        margin-right: 20px;
         line-height: inherit;
-        position: relative;
-        top: -2px;
+        position: absolute;
+        top: 6px;
+        left: 0;
       }
 
       ul {
         margin-bottom: 15px;
-        margin-left: 30px;
+        //margin-left: 30px;
         margin-top: 15px;
 
         li {
@@ -68,21 +68,22 @@ $vh: 1080;
 
     li {
       line-height: lh(16,22.72);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
+      position: relative;
+      padding-left: 25px;
 
       &:before {
         counter-increment: li;
         content: counters(li, ".") ". ";
         display: inline-block;
         color: #0a0de1;
-        margin-right: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
       }
 
       ol{
         margin-bottom: 15px;
-        margin-left: 30px;
+        //margin-left: 30px;
         margin-top: 15px;
       }
     }
@@ -101,17 +102,27 @@ $vh: 1080;
   table{
     border-collapse: collapse;
     width: 100%;
+    max-width: 100%;
     margin-bottom: 30px;
-    td{
+    overflow-y: auto;
+
+
+    td,th{
       border: 1px solid rgba(0, 0, 0, 0.1);
       padding: 25px 20px;
-
+      text-align: left;
       color: #4d4d4d;
       font-weight: 400;
       line-height: lh(16px,22.72px);
       @include sm-block{
         padding: 15px 10px;
       }
+    }
+
+    th{
+      font-weight: 600;
+      font-size: 18px;
+      color: #000000;
     }
   }
 
@@ -154,6 +165,10 @@ $vh: 1080;
 
       }
     }
+  }
+
+  img{
+    margin-bottom: 30px;
   }
 
 }
