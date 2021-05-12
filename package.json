@@ -34,6 +34,6 @@
     "jquery.maskedinput": "^1.4.1",
     "normalize.css": "^8.0.1",
     "smart-grid": "^2.1.2",
-    "swiper": "^5.3.6"
+    "swiper": "^6.5.1"
   }
 }
